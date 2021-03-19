@@ -55,7 +55,7 @@ const costService = async (botRate) => {
     let result = []
     
     for(let [index, currency] of cryptoList.entries()){
-        let url = `${process.env.API_URL}${currency}`
+        let url = `https://reconcile.bitkubnow.com/coinmarket-api/api/market?currency=${currency}`
         let res = await axios.get(url)
         let data = JSON.parse(res)
         const { name, symbol, quotes } = data
