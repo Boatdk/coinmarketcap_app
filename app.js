@@ -43,11 +43,11 @@ const sleep = (ms) => {
 		// await costService(botRate)
 		// await history()
 		console.log('miss===>',{_date,_time})
-		if(_time[0]=='00' && _time[1]=='15'){
+		if(_time[0]=='05' && _time[1]=='50'){
 			await connectMongoDB()
 			console.log('hit===>',_time)
-			const botRate = await BotRate.findOne({ 'time': yesterday[0] })
-			await costService(botRate)
+			// const botRate = await BotRate.findOne({ 'time': yesterday[0] })
+			// await costService(botRate)
 			// await State.create({
 			//     state_cap: {
 			// 		key:'date_coinmarket',

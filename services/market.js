@@ -44,7 +44,12 @@ const costService = async (botRate) => {
         'kusama',
         'polkadot-new',
         'near-protocol',
-        'secret'
+        'secret',
+        'yearn-finance',
+        'uniswap',
+        'aave',
+        'compound',
+        'maker'
     ]
 
     let result = []
@@ -116,12 +121,17 @@ const history = async () => {
         'kusama',
         'polkadot-new',
         'near-protocol',
-        'secret'
+        'secret',
+        'yearn-finance',
+        'uniswap',
+        'aave',
+        'compound',
+        'maker'
     ]
 
     
     let year = []
-    let dayUrl = `https://reconcile.bitkubnow.com/coinmarket-api/api/market?currency=bitcoin&start=2021-02-10&end=2021-02-11`
+    let dayUrl = `https://reconcile.bitkubnow.com/coinmarket-api/api/market?currency=bitcoin&start=2021-03-14&end=2021-03-18`
     const res = await axios.get(dayUrl)
     for(let [index, day] of res.data.quotes.entries()){
         const date = new Date(day.time_open).toISOString().replace(/T/, ' ').split(' ');
