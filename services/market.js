@@ -56,7 +56,7 @@ const costService = async (botRate) => {
     
     for(let [index, currency] of cryptoList.entries()){
         let url = `${process.env.API_URL}${currency}`
-        let res = await curl(`curl ${url}`)
+        let res = await axios.get(url)
         let data = JSON.parse(res)
         const { name, symbol, quotes } = data
         const cost = quotes[quotes.length - 1]
