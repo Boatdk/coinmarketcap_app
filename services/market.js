@@ -57,10 +57,8 @@ const costService = async (botRate) => {
     for(let [index, currency] of cryptoList.entries()){
         let url = `https://reconcile.bitkubnow.com/coinmarket-api/api/market?currency=${currency}`
         let res = await axios.get(url)
-        let data = JSON.parse(res)
-        const { name, symbol, quotes } = data
+        const { name, symbol, quotes } = res.data
         const cost = quotes[quotes.length - 1]
-        console.log(cost)
         const format = {
             name: name,
             symbol: symbol,
@@ -77,7 +75,7 @@ const costService = async (botRate) => {
         market_cap: result
     }
     console.log(data)
-    // await Market.create(data)
+    await Market.create(data)
     console.log(`${cryptoList.length} Doned !!`)
 }
 
