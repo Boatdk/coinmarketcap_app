@@ -43,7 +43,7 @@ const sleep = (ms) => {
 		// await costService(botRate)
 		// await history()
 		console.log('miss===>',{_date,_time})
-		if(_time[0]=='04' && _time[1]=='37'){
+		if(_time[0]=='04' && _time[1]=='45'){
 			await connectMongoDB()
 			console.log('hit===>',_time)
 			const botRate = await BotRate.findOne({ 'time': yesterday[0] })
